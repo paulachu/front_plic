@@ -9,10 +9,12 @@ import {MeshComponent} from "./pages/mesh/mesh.component";
 import {SkyboxComponent} from "./pages/skybox/skybox.component";
 import {TextureComponent} from "./pages/texture/texture.component";
 import {LightComponent} from "./pages/light/light.component";
+import {PresentationComponent} from "./pages/presentation/presentation.component";
 
 const routes: Routes = [
   { path: 'admin', component: AdminComponent, canActivate: [AdminGuard] },
-  { path: '', component: IndexComponent, canActivate: [AuthGuard] },
+  { path: 'auth', component: IndexComponent, canActivate: [AuthGuard] },
+  { path: '', component: PresentationComponent },
   { path: 'musique', component: MusiqueComponent },
   { path: 'mesh', component: MeshComponent },
   { path: 'skybox', component: SkyboxComponent },
