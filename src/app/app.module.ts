@@ -7,6 +7,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IndexComponent } from './pages/index/index.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { PresentationComponent } from './pages/presentation/presentation.component';
+import { MusiqueComponent } from './pages/musique/musique.component';
+import { SkyboxComponent } from './pages/skybox/skybox.component';
+import { MeshComponent } from './pages/mesh/mesh.component';
+import { MeshDetailsComponent } from './pages/mesh-details/mesh-details.component';
+import { LightComponent } from './pages/light/light.component';
+import { MaterialModule } from './material/material.module';
+import { TextureComponent } from './pages/texture/texture.component';
 function initializeKeycloak(keycloak: KeycloakService) {
 
   return () =>
@@ -34,7 +42,14 @@ function initializeKeycloak(keycloak: KeycloakService) {
   declarations: [
     AppComponent,
     IndexComponent,
-    AdminComponent
+    AdminComponent,
+    PresentationComponent,
+    MusiqueComponent,
+    SkyboxComponent,
+    MeshComponent,
+    MeshDetailsComponent,
+    LightComponent,
+    TextureComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +57,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     BrowserAnimationsModule,
     KeycloakAngularModule,
     HttpClientModule,
+    MaterialModule,
   ],
   providers: [
     {
