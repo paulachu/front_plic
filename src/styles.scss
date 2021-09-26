@@ -37,3 +37,29 @@ $frontplic-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.card
+{
+  width: 400px;
+  margin-left: 2rem;
+}
+
+.card__header
+{
+  margin-top: 16px;
+  justify-content: space-between;
+}
+.mat-card-header-text
+{
+  margin: 0 !important;
+}
+.mat-card-header-text
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mat-card-title
+{
+  margin-bottom: 0 !important;
+}
