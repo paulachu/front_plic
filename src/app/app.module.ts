@@ -16,6 +16,10 @@ import { LightComponent } from './pages/light/light.component';
 import { MaterialModule } from './material/material.module';
 import { TextureComponent } from './pages/texture/texture.component';
 import { LightCardComponent } from './components/light-card/light-card.component';
+import { MeshCardComponent } from './components/mesh-card/mesh-card.component';
+import { SkyboxCardComponent } from './components/skybox-card/skybox-card.component';
+import { TextureCardComponent } from './components/texture-card/texture-card.component';
+import { MusicCardComponent } from './components/music-card/music-card.component';
 function initializeKeycloak(keycloak: KeycloakService) {
 
   return () =>
@@ -51,7 +55,11 @@ function initializeKeycloak(keycloak: KeycloakService) {
     MeshDetailsComponent,
     LightComponent,
     TextureComponent,
-    LightCardComponent
+    LightCardComponent,
+    MeshCardComponent,
+    SkyboxCardComponent,
+    TextureCardComponent,
+    MusicCardComponent
   ],
   imports: [
     BrowserModule,
