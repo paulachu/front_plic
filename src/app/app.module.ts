@@ -15,6 +15,7 @@ import { MeshDetailsComponent } from './pages/mesh-details/mesh-details.componen
 import { LightComponent } from './pages/light/light.component';
 import { MaterialModule } from './material/material.module';
 import { TextureComponent } from './pages/texture/texture.component';
+import { LightCardComponent } from './components/light-card/light-card.component';
 function initializeKeycloak(keycloak: KeycloakService) {
 
   return () =>
@@ -49,7 +50,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     MeshComponent,
     MeshDetailsComponent,
     LightComponent,
-    TextureComponent
+    TextureComponent,
+    LightCardComponent
   ],
   imports: [
     BrowserModule,
