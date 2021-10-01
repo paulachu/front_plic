@@ -2,6 +2,6 @@
   <div class="light__card__color" [style.background]="getColor()"></div>
   <mat-card-header class="card__header">
     <mat-card-title>{{light.levelName}}</mat-card-title>
-    <button mat-icon-button><mat-icon class="menu-icon">edit</mat-icon></button>
+    <button mat-icon-button (click)="openDialog()"><mat-icon class="menu-icon">edit</mat-icon></button>
   </mat-card-header>
 </mat-card>

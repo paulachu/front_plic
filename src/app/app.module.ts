@@ -20,6 +20,7 @@ import { MeshCardComponent } from './components/mesh-card/mesh-card.component';
 import { SkyboxCardComponent } from './components/skybox-card/skybox-card.component';
 import { TextureCardComponent } from './components/texture-card/texture-card.component';
 import { MusicCardComponent } from './components/music-card/music-card.component';
+import { UploadPopupComponent } from './components/upload-popup/upload-popup.component';
 function initializeKeycloak(keycloak: KeycloakService) {
 
   return () =>
@@ -59,7 +60,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     MeshCardComponent,
     SkyboxCardComponent,
     TextureCardComponent,
-    MusicCardComponent
+    MusicCardComponent,
+    UploadPopupComponent
   ],
   imports: [
     BrowserModule,
