@@ -1,1 +1,3 @@
-<app-music-card></app-music-card>
+<div class="card__list">
+  <app-music-card *ngFor="let music of musics" [musicInterface]="music"></app-music-card>
+</div>

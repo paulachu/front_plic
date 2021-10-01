@@ -15,6 +15,7 @@ export class LightComponent implements OnInit {
 
   ngOnInit(): void {
     let light: LightInterface = {
+      id: 1,
       levelName: "niveau 1",
       r: 65,
       g: 120,
@@ -23,6 +24,7 @@ export class LightComponent implements OnInit {
     }
     this.lights.push(light);
     light = {
+      id: 2,
       levelName: "niveau 2",
       r: 175,
       g: 175,
@@ -31,6 +33,7 @@ export class LightComponent implements OnInit {
     }
     this.lights.push(light);
     light = {
+      id: 3,
       levelName: "niveau 3",
       r: 200,
       g: 120,
@@ -39,5 +42,4 @@ export class LightComponent implements OnInit {
     }
     this.lights.push(light);
   }
-
 }

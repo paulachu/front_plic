@@ -14,6 +14,11 @@ export class LightCardComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  openDialog()
+  {
+    //TODO
+    console.log("click")
+  }
   getColor(): string
   {
     return 'rgba(' + this.light.r + ',' + this.light.g + ',' + this.light.b + ',' + this.light.a + ')';

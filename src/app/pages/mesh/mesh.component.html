@@ -1,1 +1,3 @@
-<app-mesh-card></app-mesh-card>
+<div class="card__list">
+  <app-mesh-card *ngFor="let mesh of meshs" [mesh]="mesh"></app-mesh-card>
+</div>

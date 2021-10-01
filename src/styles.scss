@@ -68,3 +68,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 {
   width: 100%;
 }
+.card__list
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 2rem;
+}
