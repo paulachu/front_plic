@@ -13,11 +13,18 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $frontplic-primary: mat.define-palette(mat.$grey-palette);
-$frontplic-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
+$frontplic-accent: mat.define-palette(mat.$blue-palette, A200, A100, A400);
+$frontplic-success: mat.define-palette(mat.$green-palette, A200, A100, A400);
 // The warn palette is optional (defaults to red).
 $frontplic-warn: mat.define-palette(mat.$red-palette);
 
+$slider-theme: mat.define-light-theme((
+  color: (
+    primary: $frontplic-success,
+    accent: $frontplic-accent,
+    warn: $frontplic-warn,
+  )
+));
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
 $frontplic-theme: mat.define-light-theme((
@@ -32,7 +39,7 @@ $frontplic-theme: mat.define-light-theme((
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($frontplic-theme);
-
+@include mat.slider-theme($slider-theme);
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
@@ -74,4 +81,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   flex-wrap: wrap;
   justify-content: flex-start;
   margin: 2rem;
+}
+h3
+{
+  margin: 2rem 0 2rem 4rem !important;
+  font-size: 24px !important;
 }
