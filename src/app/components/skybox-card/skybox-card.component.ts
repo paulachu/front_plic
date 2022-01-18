@@ -18,11 +18,11 @@ export class SkyboxCardComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(UploadPopupComponent, {
-      data: {type: "Skybox", levelName: this.skybox.levelName}
+      data: {type: "Skybox", id: this.skybox.id, levelNumber: this.skybox.levelNumber}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+
     });
   }
 }

@@ -19,11 +19,14 @@ export class MusicCardComponent implements OnInit {
   openDialog()
   {
     const dialogRef = this.dialog.open(UploadPopupComponent, {
-      data: {type: "Musique", levelName: this.musicInterface.levelName}
+      data: {type: "Musique", id: this.musicInterface.id, levelNumber: this.musicInterface.levelNumber}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      if (result)
+      {
+        this.musicInterface.presignedUrl = result.presignedUrl;
+      }
     });
   }
 }

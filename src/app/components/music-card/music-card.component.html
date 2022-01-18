@@ -1,7 +1,7 @@
 <mat-card class="card">
-  <audio class="music__card__audio" controls [src]="musicInterface.link"></audio>
+  <audio class="music__card__audio" controls [src]="musicInterface.presignedUrl"></audio>
   <mat-card-header class="card__header">
-    <mat-card-title>{{musicInterface.levelName}}</mat-card-title>
+    <mat-card-title>Niveau {{musicInterface.levelNumber}}</mat-card-title>
     <button mat-icon-button (click)="openDialog()"><mat-icon class="menu-icon">edit</mat-icon></button>
   </mat-card-header>
 </mat-card>

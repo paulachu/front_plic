@@ -1,0 +1,40 @@
+<h2>Modifier la lumière du niveau {{light.levelNumber}}</h2>
+
+<div class="container">
+  <div class="sliders__container" [style.border-color]="getColor()">
+    <div class="preview__color" [style.background-color]="getColor()"></div>
+    <div class="slider__container">
+      <p class="color__name">R :</p>
+      <mat-slider class="color__slider" color="warn" min="0" max="255" step="1" (input)="changeRedValue($event)" [value]="lightForm.red"></mat-slider>
+      <mat-form-field class="form__field">
+        <input class="color__input" matInput [(ngModel)]="lightForm.red" maxlength="5" value="255">
+      </mat-form-field>
+    </div>
+    <div class="slider__container">
+      <p class="color__name">G :</p>
+      <mat-slider class="color__slider" color="primary" min="0" max="255" step="1" (input)="changeGreenValue($event)" [value]="lightForm.green"></mat-slider>
+      <mat-form-field class="form__field">
+        <input class="color__input" type="number" matInput [(ngModel)]="lightForm.green" maxlength="5" value="255">
+      </mat-form-field>
+    </div>
+    <div class="slider__container">
+      <p class="color__name">B :</p>
+      <mat-slider class="color__slider" color="accent" min="0" max="255" step="1" (input)="changeBlueValue($event)" [value]="lightForm.blue"></mat-slider>
+      <mat-form-field class="form__field">
+        <input class="color__input" matInput [(ngModel)]="lightForm.blue" maxlength="5" value="255">
+      </mat-form-field>
+    </div>
+    <div class="slider__container">
+      <p class="color__name">A :</p>
+      <mat-slider class="color__slider" min="0" max="255" step="1" (input)="changeAlphaValue($event)" [value]="lightForm.alpha"></mat-slider>
+      <mat-form-field class="form__field">
+        <input class="color__input" matInput [(ngModel)]="lightForm.alpha" maxlength="5" value="255">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="button__group">
+    <button mat-raised-button color="accent" (click)="updateLight()">Enregistrer</button>
+    <button mat-raised-button color="warn" (click)="closeDialog()">Annuler</button>
+  </div>
+</div>
+

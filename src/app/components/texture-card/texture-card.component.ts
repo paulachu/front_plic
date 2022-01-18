@@ -19,11 +19,15 @@ export class TextureCardComponent implements OnInit {
   openDialog()
   {
     const dialogRef = this.dialog.open(UploadPopupComponent, {
-      data: {type: "Texture", levelName: this.texture.levelName}
+      data: {type: "Texture", id: this.texture.id, levelNumber: this.texture.levelNumber}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      if (result != null)
+      {
+        this.texture.presignedUrl = result.presignedUrl;
+        console.log(result)
+      }
     });
   }
 }
