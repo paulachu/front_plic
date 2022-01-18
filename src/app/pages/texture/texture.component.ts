@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {SkyboxInterface} from "../../interfaces/skybox-interface";
 import {TextureInterface} from "../../interfaces/texture-interface";
+import {RequestService} from "../../services/request.service";
 
 @Component({
   selector: 'app-texture',
@@ -10,27 +11,18 @@ import {TextureInterface} from "../../interfaces/texture-interface";
 export class TextureComponent implements OnInit {
 
   textures: TextureInterface[] = new Array();
-  constructor() { }
+  constructor(private requestService: RequestService) { }
 
   ngOnInit(): void {
-    let texture: TextureInterface = {
-      id: 1,
-      levelName: "niveau 1",
-      link: "https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png"
-    }
-    this.textures.push(texture);
-    texture = {
-      id: 2,
-      levelName: "niveau 2",
-      link: "https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png"
-    }
-    this.textures.push(texture);
-    texture = {
-      id: 3,
-      levelName: "niveau 3",
-      link: "https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png"
-    }
-    this.textures.push(texture);
+    this.requestService.getLevel().subscribe(
+      res => res.forEach(level =>
+        this.requestService.getTexture(level.texture).subscribe(r =>
+        {
+          r.levelNumber = level.levelNumber;
+          this.textures.push(r)
+        })
+      ));
+    console.log(this.textures)
   }
 
 }

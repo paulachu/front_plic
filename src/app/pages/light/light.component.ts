@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LightInterface} from "../../interfaces/light-interface";
+import {RequestService} from "../../services/request.service";
 
 @Component({
   selector: 'app-light',
@@ -11,35 +12,17 @@ export class LightComponent implements OnInit {
   lights: LightInterface[]
   = new Array()
 
-  constructor() { }
+  constructor(private requestService: RequestService) { }
 
   ngOnInit(): void {
-    let light: LightInterface = {
-      id: 1,
-      levelName: "niveau 1",
-      r: 65,
-      g: 120,
-      b: 125,
-      a: 255
-    }
-    this.lights.push(light);
-    light = {
-      id: 2,
-      levelName: "niveau 2",
-      r: 175,
-      g: 175,
-      b: 50,
-      a: 255
-    }
-    this.lights.push(light);
-    light = {
-      id: 3,
-      levelName: "niveau 3",
-      r: 200,
-      g: 120,
-      b: 125,
-      a: 255
-    }
-    this.lights.push(light);
+    this.requestService.getLevel().subscribe(res =>
+    {
+      res.forEach(level => {
+        return this.requestService.getLight(level.light).subscribe(r => {
+          r.levelNumber = level.levelNumber;
+          this.lights.push(r)
+        });
+      })
+    });
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {RequestService} from "../../services/request.service";
 
 @Component({
   selector: 'app-presentation',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PresentationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private requestService: RequestService) { }
 
   ngOnInit(): void {
+    this.requestService.getLevel().subscribe(res =>
+    this.requestService.getLight(res[0].id).subscribe(r => console.log(r)));
   }
 
 }

@@ -1,0 +1,25 @@
+.text_pres--paragraph
+{
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+.text_pres
+{
+  margin-top: 5rem;
+  margin-left: 5rem;
+}
+.team_pres
+{
+  display: flex;
+  justify-content: space-around;
+}
+.team_pres--member
+{
+  font-size: 20px;
+  margin-bottom: 5rem;
+  display: flex;
+}
+.team_pres--member--name
+{
+  margin: auto auto auto 2rem;
+}

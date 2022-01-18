@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {MusicInterface} from "../../interfaces/music-interface";
+import {RequestService} from "../../services/request.service";
 
 @Component({
   selector: 'app-musique',
@@ -10,27 +11,14 @@ import {MusicInterface} from "../../interfaces/music-interface";
 export class MusiqueComponent implements OnInit {
   musics: MusicInterface[]
     = new Array()
-  constructor() { }
+  constructor(private requestService: RequestService) { }
 
   ngOnInit(): void {
-    let music: MusicInterface = {
-      id: 1,
-      link: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-      levelName : "niveau 1"
-    }
-    this.musics.push(music);
-    music = {
-      id: 2,
-      link: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-      levelName : "niveau 2"
-    }
-    this.musics.push(music);
-    music = {
-      id: 3,
-      link: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
-      levelName : "niveau 3"
-    }
-    this.musics.push(music);
+    this.requestService.getLevel().subscribe(
+      res => res.forEach(level => this.requestService.getMusic(level.music).subscribe(r =>{
+        r.levelNumber = level.levelNumber;
+        this.musics.push(r)
+      })));
   }
 
 }
