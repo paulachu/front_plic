@@ -1,8 +1,8 @@
 export interface LightInterface {
   id: number,
-  levelName: string,
-  r: number,
-  g: number,
-  b: number,
-  a: number
+  levelNumber: number,
+  red: number,
+  green: number,
+  blue: number,
+  alpha: number
 }

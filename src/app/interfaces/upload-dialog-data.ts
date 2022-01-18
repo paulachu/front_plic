@@ -1,4 +1,5 @@
 export interface UploadDialogData {
   type: string,
-  levelName: string;
+  id: number,
+  levelNumber: number
 }

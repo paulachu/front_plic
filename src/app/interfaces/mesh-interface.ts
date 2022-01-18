@@ -1,5 +1,5 @@
 export interface MeshInterface {
   id: number,
   link: string,
-  levelName: string
+  levelNumber: number,
 }
