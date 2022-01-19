@@ -14,7 +14,7 @@
       <p class="color__name">G :</p>
       <mat-slider class="color__slider" color="primary" min="0" max="255" step="1" (input)="changeGreenValue($event)" [value]="lightForm.green"></mat-slider>
       <mat-form-field class="form__field">
-        <input class="color__input" type="number" matInput [(ngModel)]="lightForm.green" maxlength="5" value="255">
+        <input class="color__input" matInput [(ngModel)]="lightForm.green" maxlength="5" value="255">
       </mat-form-field>
     </div>
     <div class="slider__container">
